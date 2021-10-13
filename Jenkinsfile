@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage('Versiyon'){
             steps{
-
                 echo "Maven Integration Version"
                 sh "mvn --version"
                 echo "Java Version"
