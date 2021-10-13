@@ -95,20 +95,20 @@
                                     <exec>
                                         <arg>/bin/sh</arg>
                                         <arg>-c</arg>
-                                        <arg>mkdir -p /mnt/deniz</arg>
+                                        <arg>mkdir -p /mnt/jenkins</arg>
                                     </exec>
                                 </shell>
                                 <from>openjdk:11</from>
-                             <!--   <tags>
-                                    <tag>latest</tag>
-                                    <tag>${project.version}</tag>
-                                </tags>
-                               -->
+                                <!--   <tags>
+                                       <tag>latest</tag>
+                                       <tag>${project.version}</tag>
+                                   </tags>
+                                  -->
                                 <ports>
                                     <port>8080</port>
                                 </ports>
                                 <volumes>
-                                    <volume>/mnt/deniz</volume>
+                                    <volume>/mnt/jenkins</volume>
                                 </volumes>
                                 <entryPoint>
                                     <exec>
