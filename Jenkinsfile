@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                echo "WebHook Otomatik Pipeline......"
+                echo "WebHook Otomatik Pipelineee......"
                 echo "Maven Versiyon"
                 sh "mvn -version"
                 echo "Maven Clean"
