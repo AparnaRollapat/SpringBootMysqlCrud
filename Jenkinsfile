@@ -2,7 +2,7 @@ pipeline{
     agent {
         docker {
             image "mvn:3.6.0-openjdk-13"
-
+            label "docker"
         }
     }
     stages{
