@@ -1,22 +1,17 @@
-pipeline {
+pipeline{
     agent any
-    stages {
-        stage('Versiyon'){
+
+    stages{
+        stage('Build'){
             steps{
-                echo "Maven Integration Version"
-                sh "mvn --version"
-                echo "Java Version"
-                sh "java --version"
+                sh "mvn -version"
+                sh "mvn clean install"
             }
         }
-        stage('Build') {
-            steps {
-                // Get some code from a GitHub repository
-                git 'https://github.com/denizturkmen/SpringBootMysqlCrud.git'
-                sh 'mvn clean'
-                sh 'mvn compile'
-                sh 'mvn package'
-            }
+    }
+    post{
+        always {
+            cleanWs()
         }
     }
 }
