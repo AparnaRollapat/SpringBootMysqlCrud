@@ -4,6 +4,7 @@
  mvn package
  mvn clean
  mvn install
+ Note: mvn clean install ?????
 ```
 
 ```
