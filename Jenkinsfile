@@ -9,8 +9,7 @@ pipeline{
         stage('Build'){
             steps{
                 sh "sudo apt update"
-                sh "sudo apt install -y openssh-server"
-                sh "ssh -V"
+
                 sh "mvn -version"
                 sh "mvn clean"
             }
