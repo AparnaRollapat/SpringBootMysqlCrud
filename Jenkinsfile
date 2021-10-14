@@ -8,7 +8,6 @@ pipeline{
             steps{
                 sh "mvn -version"
                 sh "mvn clean"
-                sh "mvn install"
             }
         }
     }
