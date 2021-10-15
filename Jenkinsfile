@@ -1,19 +1,24 @@
-pipeline{
-    agent{
-        docker:"openjdk:11"
-        label: "master"
-    }   
-    stages{
-        stage('Build'){
-            steps{
-                echo "WebHook Otomatik Pipeline...."
-                echo "Maven Versiyon"
-                sh "mvn -version"
-                echo "Maven Clean"
-                sh "mvn clean"
+pipeline {
+    agent any
+    tools {
+        // Jenkins -> Configuration name
+        jdk 'jdk'
+        maven '3.8.3'
+    }
+    stages {
+        stage("build project") {
+            steps {
+               // git 'https://github.com/denizturkmen/SpringBootMysqlCrud.git'
+                sh 'java -version'
+                echo 'building project...'
+                sh "mvn compile"
+                sh "mvn package"
+                //sh "mvn test"
+                sh "mvn clean install"
             }
         }
     }
+}
     post{
         always {
             cleanWs()
