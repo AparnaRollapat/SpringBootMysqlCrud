@@ -78,32 +78,39 @@
                     </excludes>
                 </configuration>
             </plugin>
-        <!-- Maven Plugin 1 io.fabric8-->
-        <plugin>
-            <groupId>io.fabric8</groupId>
-            <artifactId>docker-maven-plugin</artifactId>
-            <version>0.37.0</version>
-            <extensions>true</extensions>
-            <configuration>
-                <verbose>true</verbose>
-                <images>
-                    <image>
-                        <name>${project.artifactId}</name>
-                        <build>
-                            <shell>
-                                <exec>
-                                    <arg>/bin/sh</arg>
-                                    <arg>-c</arg>
-                                    <arg>mkdir -p /mnt/jenkins</arg>
-                                </exec>
-                            </shell>
-                            <from>openjdk:11</from>
-                            <!--
-                            <tags>
-                                <tag>latest</tag>
-                                <tag>${project.version}</tag>
-                            </tags>
-                              -->
+            <!-- Maven Plugin 1 io.fabric8-->
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.37.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <verbose>true</verbose>
+                    <dockerHost>unix:///var/run/docker.sock</dockerHost>
+                    <registry>http://index.docker.io/v1</registry>
+                    <!-- I think it's not necessary, plugin use the creds from docker config.json -->
+                    <authConfig>
+                        <username>user</username>
+                        <password>pass</password>
+                    </authConfig>
+                    <images>
+                        <image>
+                            <name>denizturkmen/${project.artifactId}</name>
+                            <build>
+                                <shell>
+                                    <exec>
+                                        <arg>/bin/sh</arg>
+                                        <arg>-c</arg>
+                                        <arg>mkdir -p /mnt/jenkins</arg>
+                                    </exec>
+                                </shell>
+                                <from>openjdk:11</from>
+                                <!--
+                                    <tags>
+                                        <tag>latest</tag>
+                                        <tag>${project.version}</tag>
+                                    </tags>
+                                -->
                                 <ports>
                                     <port>8080</port>
                                 </ports>
