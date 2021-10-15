@@ -1,7 +1,7 @@
 pipeline{
     agent{
         docker:"openjdk:11"
-        label: "naster"
+        label: "master"
     }   
     stages{
         stage('Build'){
