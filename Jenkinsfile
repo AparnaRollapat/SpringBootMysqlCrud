@@ -1,8 +1,8 @@
 pipeline{
-    agent any
-    tools {
-        maven "3.8.3"
-    }
+    agent{
+        docker:"openjdk:11"
+        label: "naster"
+    }   
     stages{
         stage('Build'){
             steps{
