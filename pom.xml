@@ -78,7 +78,7 @@
                     </excludes>
                 </configuration>
             </plugin>
-
+<!--
             <!-- Maven Plugin 1 io.fabric8-->
             <plugin>
                 <groupId>io.fabric8</groupId>
@@ -134,6 +134,8 @@
                     </execution>
                 </executions>
             </plugin>
+                
+               -->
             <!-- Maven Plugin 2 spotify-->
             <!--
             <plugin>
