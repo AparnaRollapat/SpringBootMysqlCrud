@@ -78,32 +78,34 @@
                     </excludes>
                 </configuration>
             </plugin>
-<!--
+
             <!-- Maven Plugin 1 io.fabric8-->
-            <plugin>
-                <groupId>io.fabric8</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>0.37.0</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <verbose>true</verbose>
-                    <images>
-                        <image>
-                            <name>${project.artifactId}</name>
-                            <build>
-                                <shell>
-                                    <exec>
-                                        <arg>/bin/sh</arg>
-                                        <arg>-c</arg>
-                                        <arg>mkdir -p /mnt/jenkins</arg>
-                                    </exec>
-                                </shell>
-                                <from>openjdk:11</from>
-                                <!--   <tags>
-                                       <tag>latest</tag>
-                                       <tag>${project.version}</tag>
-                                   </tags>
-                                  -->
+        <!--
+        <plugin>
+            <groupId>io.fabric8</groupId>
+            <artifactId>docker-maven-plugin</artifactId>
+            <version>0.37.0</version>
+            <extensions>true</extensions>
+            <configuration>
+                <verbose>true</verbose>
+                <images>
+                    <image>
+                        <name>${project.artifactId}</name>
+                        <build>
+                            <shell>
+                                <exec>
+                                    <arg>/bin/sh</arg>
+                                    <arg>-c</arg>
+                                    <arg>mkdir -p /mnt/jenkins</arg>
+                                </exec>
+                            </shell>
+                            <from>openjdk:11</from>
+
+                              <tags>
+                                   <tag>latest</tag>
+                                   <tag>${project.version}</tag>
+                               </tags>
+
                                 <ports>
                                     <port>8080</port>
                                 </ports>
@@ -134,8 +136,8 @@
                     </execution>
                 </executions>
             </plugin>
-                
-               -->
+                -->
+
             <!-- Maven Plugin 2 spotify-->
             <!--
             <plugin>
