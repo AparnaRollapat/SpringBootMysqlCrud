@@ -86,13 +86,14 @@
                 <extensions>true</extensions>
                 <configuration>
                     <verbose>true</verbose>
-                    <dockerHost>unix:///var/run/docker.sock</dockerHost>
+                <!--    <dockerHost>unix:///var/run/docker.sock</dockerHost>
                     <registry>http://index.docker.io/v1</registry>
-                    <!-- I think it's not necessary, plugin use the creds from docker config.json -->
+
                     <authConfig>
                         <username>user</username>
                         <password>pass</password>
                     </authConfig>
+                -->
                     <images>
                         <image>
                             <name>denizturkmen/${project.artifactId}</name>
