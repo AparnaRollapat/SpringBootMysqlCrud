@@ -80,7 +80,7 @@
             </plugin>
 
             <!-- Maven Plugin 1 io.fabric8-->
-        <!--
+
         <plugin>
             <groupId>io.fabric8</groupId>
             <artifactId>docker-maven-plugin</artifactId>
@@ -100,12 +100,12 @@
                                 </exec>
                             </shell>
                             <from>openjdk:11</from>
-
-                              <tags>
-                                   <tag>latest</tag>
-                                   <tag>${project.version}</tag>
-                               </tags>
-
+                            <!--
+                            <tags>
+                                <tag>latest</tag>
+                                <tag>${project.version}</tag>
+                            </tags>
+                              -->
                                 <ports>
                                     <port>8080</port>
                                 </ports>
@@ -136,7 +136,7 @@
                     </execution>
                 </executions>
             </plugin>
-                -->
+
 
             <!-- Maven Plugin 2 spotify-->
             <!--
