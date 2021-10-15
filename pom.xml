@@ -78,9 +78,7 @@
                     </excludes>
                 </configuration>
             </plugin>
-
-            <!-- Maven Plugin 1 io.fabric8-->
-
+        <!-- Maven Plugin 1 io.fabric8-->
         <plugin>
             <groupId>io.fabric8</groupId>
             <artifactId>docker-maven-plugin</artifactId>
